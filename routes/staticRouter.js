@@ -9,9 +9,12 @@ router.get("/", async (req, res) => {
     urls: allurls,
   });
 });
-// return res.render("home")
+//  return res.render("home")
 
 router.get("/signup", (req, res) => {
   return res.render("signup");
+});
+router.get("/login", (req, res) => {
+  return res.render("login");
 });
 module.exports = router;
