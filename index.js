@@ -8,8 +8,8 @@ const userRoute = require("./routes/user.js");
 const app = express("./middlewares/auth.js");
 const PORT = 8001;
 const cookieParser = require("cookie-parser");
-const { restrictToLoginUserOnly } = require("./middlewares/auth");
-const {}=require
+const { restrictToLoginUserOnly, checkAuth } = require("./middlewares/auth.js");
+const {} = require;
 
 connectToMongoDb("mongodb://127.0.0.1:27017/short-url").then(() =>
   console.log("mongodb connected")
@@ -29,7 +29,7 @@ app.get("/test", async (req, res) => {
 app.use("/url", restrictToLoginUserOnly, urlRoute);
 app.use("/user", userRoute);
 
-app.use("/", staticRoute);
+app.use("/", checkAuth, staticRoute);
 app.get("/url/:shortId", async (req, res) => {
   const shortId = req.params.shortId;
   const entry = await URL.findOneAndUpdate(
