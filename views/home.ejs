@@ -31,26 +31,34 @@
     }
 
     table {
-        width: 100%;
-        border-collapse: collapse;
-        }
-    table, th, td {
-        border: none !important;
-        }
-    th, td {
-        padding: 10px;
-        text-align: left;
-        }
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+      border: none !important;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+    }
+
     table tr:nth-child(even) {
-        background-color: #eee;
-        }
+      background-color: #eee;
+    }
+
     table tr:nth-child(odd) {
-        background-color: #fff;
-        }
+      background-color: #fff;
+    }
+
     table th {
-        background-color: #333;
-        color: #fff;
-        }
+      background-color: #333;
+      color: #fff;
+    }
 
 
 
@@ -67,7 +75,6 @@
       background-color: #333;
       color: #fff;
     }
-
   </style>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -102,7 +109,7 @@
         <% urls.forEach((url, index) => { %>
         <tr>
           <td><%= index+1 %></td>
-          <td><%= url.shortId %></td>
+          <td> http://localhost:8001/url/<%= url.shortId %></td>
           <td><%= url.redirectUrl %></td>
           <td><%= url.visitHistory.length %></td>
         </tr>
@@ -111,9 +118,6 @@
     </table>
     <% } %>
   </div>
-
-
-
   <script src="" async defer></script>
 </body>
 
