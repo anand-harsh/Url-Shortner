@@ -1,0 +1,6 @@
+{
+    "version": 2,
+    "name":"Url-shortner",
+    "builds": [{"src":"server.js", "use":"@vercel/node"}],
+    "route":[{"src":"(/.*)", "dest":"/index.js"}]
+}
