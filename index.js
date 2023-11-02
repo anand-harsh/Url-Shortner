@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const { connectToMongoDb } = require("./service/connect.js");
 const path = require("path");
@@ -6,13 +7,17 @@ const urlRoute = require("./routes/url");
 const staticRoute = require("./routes/staticRouter.js");
 const userRoute = require("./routes/user.js");
 const app = express("./middlewares/auth.js");
-const PORT = 8001;
+var cors=require('cors')
+app.use(cors())
 const cookieParser = require("cookie-parser");
 const { checkForAuthentication, restrictTo } = require("./middlewares/auth.js");
 // const { restrictToLoginUserOnly, checkAuth } = require("./middlewares/auth.js");
 const {} = require;
+const PORT=process.env.PORT
+const MONGO_URL=process.env.MONGO_URL
 
-connectToMongoDb("mongodb://127.0.0.1:27017/short-url").then(() =>
+
+connectToMongoDb(MONGO_URL, { useNewUrlParser: true, useCreateIndex: true }).then(() =>
   console.log("mongodb connected")
 );
 
