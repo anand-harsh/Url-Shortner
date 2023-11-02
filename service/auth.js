@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
-const JWT_JWT_SECRET=process.env.JWT_JWT_SECRET
-const JWT_SECRET = "enfesilnviseisnev";
+const JWT_SECRET=process.env.JWT_SECRET
+// const JWT_SECRET = "enfesilnviseisnev";
 // const sessionIdToUserMap = new Map();
 
 function setUser(user) {
