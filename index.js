@@ -17,9 +17,7 @@ const PORT=process.env.PORT
 const MONGO_URL=process.env.MONGO_URL
 
 
-connectToMongoDb(MONGO_URL, { useNewUrlParser: true, useCreateIndex: true }).then(() =>
-  console.log("mongodb connected")
-);
+connectToMongoDb(MONGO_URL, { useNewUrlParser: true, useCreateIndex: true })
 
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
